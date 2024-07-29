@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+
+    <div class="container">
+       
+        <h2></h2>
+        <div class="row">
+            <div class="col">
+                <img class="img-fluid" src="{% static 'physio.webp' %}">
+                <div class="col">
+                    <p> physiotherapy, is a healthcare profession, as well as the care provided by physical therapists who promote, maintain, or restore health through patient education, physical intervention, disease prevention, and health promotion. Physical therapist is the term used for such professionals in the United States, and physiotherapist is the term used in many other countries.</p>
+                </div>
+            </div>
+            
+            <div class="card col p-2">
+                <form action="">
+                    <h2 class="text-primary">Login</h2>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" placeholder="Enter your Name" name="name" id="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" placeholder="Enter your Email" name="email" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="Password">Password</label>
+                        <input type="password" class="form-control" placeholder="Enter your Password" name="Password" id="Password">
+                    </div>
+                    
+                    <button class="btn btn-primary mt-2 mb-2 btn-block" >Submit</button>
+                    <button type="clear" class="btn btn-primary mt-2 mb-2 btn-block" >Clear</button>
+                </form>
+    
+
+            </div>
+        </div>
+    </div>
+    {% endblock %}

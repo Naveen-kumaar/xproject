@@ -1,0 +1,78 @@
+{%extends 'base.html'%}
+{% load static %}
+{% block content%}
+
+    <div class="container">
+       
+        <h2></h2>
+        <div class="row">
+            <div class="col">
+                <img class="img-fluid" src="{% static 'create.jpg' %}">
+                <div class="col">
+                    <p> Physicians like Hippocrates and later Galen are believed to have been the first practitioners of physical therapy, advocating massage, manual therapy techniques and hydrotherapy to treat people in 460 BC.After the development of orthopedics in the eighteenth century, machines like the Gymnasticon were developed to treat gout and similar diseases by systematic exercise of the joints, similar to later developments in physical therapy.
+
+                        The earliest documented origins of actual physical therapy as a professional group date back to Per Henrik Ling, "Father of Swedish Gymnastics," who founded the Royal Central Institute of Gymnastics (RCIG) in 1813 for manipulation, and exercise. Up until 2014, the Swedish word for a physical therapist was sjukgymnast = someone involved in gymnastics for those who are ill, but the title was then changed to fysioterapeut (physiotherapist), the word used in the other Scandinavian countries</p>
+                        <img class="img-fluid" src="{% static 'physio.webp' %}">
+                       <p>physiotherapy, is a healthcare profession, as well as the care provided by physical therapists who promote, maintain, or restore health through patient education, physical intervention, disease prevention, and health promotion. Physical therapist is the term used for such professionals in the United States, and physiotherapist is the term used in many other countries.</p>
+
+                </div>
+            </div>
+            
+            <div class="card col p-3">
+                <form method = "POST"action="">
+                    {% csrf_token %}
+                    <h2 class="text-primary">Add patient details</h2>
+                    <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="date" class="form-control" name="date" id="date" required>
+                    </div>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" name="name" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="age">Age</label>
+                            <input type="text" class="form-control" name="age" id="age" required>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="male">Male</label>
+                            <input type="radio" name="gender"id="male" value="male">
+                            <label for="female">Female</label>
+                            <input type="radio"  name="gender"  id="female" value="female">
+                        </div>
+                        <br>
+                       
+                        <div class="form-group">
+                            <lable for="address">Address</lable>
+                            <textarea name="address" class="form-control" name="address"id="address"></textarea>
+                        </div>
+                        <div class="form-group" >
+                            <label for="contactno">Contact no</label>
+                            <input type="tel" class="form-control" name="contactno" id="contactno"maxlength="10">
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="history">History</label>
+                            <input type="text" class="form-control" name="history" id="history" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pain">Pain</label>
+                            <input type="text" class="form-control" name="pain" id="pain" required>
+                        </div>
+                       
+                       
+                        <div class="form-group">
+                            <label for="duration">Duration</label>
+                            <input type="time" class="form-control" name="duration" id="duration" required>
+                        </div>
+                        
+                    <button class="btn btn-primary mt-2 mb-2" >Submit</button>
+                    <button type="clear" class="btn btn-primary mt-2 mb-2" >Clear</button>
+                </form>
+    
+
+            </div>
+        </div>
+    </div>
+   {% endblock %}
