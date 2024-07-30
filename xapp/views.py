@@ -19,6 +19,8 @@ def create(request):
 
         en =patientdetails(Date=date,Name=name,Age=age,Gender=gender,Address=address,Contactno=contactno,History=history,Pain=pain,Duration=duration)
         en.save()
+        mydata = patientdetails.all()
+        return render(request,'view',{'data':mydata})
     return render(request,"create.html")
 
 

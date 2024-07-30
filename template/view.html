@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content%}
+<h3 class="page-header text-primary text-center"></h3>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>Contact No</th>
+            <th>History</th>
+            <th>Pain</th>
+            <th>Duration</th>
+        </tr>
+    </thead>
+    
+        {% for data in datas %}
+        <tbody>
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{data.Date}}</td>
+                <td>{{data.Name}}</td>
+                <td>{{data.Age}}</td>
+                <td>{{data.Gender}}</td>
+                <td>{{data.Address}}</td>
+                <td>{{data.Contactno}}</td>
+                <td>{{data.History}}</td>
+                <td>{{data.Pain}}</td>
+                <td>{{data.Duration}}</td>
+            </tr>
+        </tbody>
+    {% endfor %}
+  
+</table>
+{% endblock %}
