@@ -1,13 +1,31 @@
 from django.shortcuts import render
 from xapp.models import register
+from xapp.models import patientdetails
 
 # Create your views here.
 def home(request):
     return render(request,"home.html")
 def create(request):
+    if request.method == 'POST':
+        date =request.POST.get('date')
+        name =request.POST.get('name')
+        age =request.POST.get('age')
+        gender =request.POST.get('gender')
+        address =request.POST.get('address')
+        contactno =request.POST.get('contactno')
+        history =request.POST.get('history')
+        pain=request.POST.get('pain')
+        duration=request.POST.get('duration')
+
+        en =patientdetails(Date=date,Name=name,Age=age,Gender=gender,Address=address,Contactno=contactno,History=history,Pain=pain,Duration=duration)
+        en.save()
     return render(request,"create.html")
+
+
 def view(request):
     return render(request,"view.html")
+
+
 def Register(request):
     if request.method == 'POST':
         name = request.POST.get('name')
