@@ -17,10 +17,11 @@
         </tr>
     </thead>
     
-        {% for data in datas %}
+        {% for data in data %}
         <tbody>
             <tr>
                 <td>{{forloop.counter}}</td>
+                <td>{{data.Id}}</td>
                 <td>{{data.Date}}</td>
                 <td>{{data.Name}}</td>
                 <td>{{data.Age}}</td>

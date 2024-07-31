@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from xapp.models import register
 from xapp.models import patientdetails
 
@@ -6,6 +6,7 @@ from xapp.models import patientdetails
 def home(request):
     return render(request,"home.html")
 def create(request):
+    
     if request.method == 'POST':
         date =request.POST.get('date')
         name =request.POST.get('name')
@@ -19,13 +20,16 @@ def create(request):
 
         en =patientdetails(Date=date,Name=name,Age=age,Gender=gender,Address=address,Contactno=contactno,History=history,Pain=pain,Duration=duration)
         en.save()
-        mydata = patientdetails.all()
-        return render(request,'view',{'data':mydata})
+        
+        
     return render(request,"create.html")
 
 
 def view(request):
-    return render(request,"view.html")
+    mydata=patientdetails.objects.all()
+
+    return render(request,'view.html',{'data':mydata})
+
 
 
 def Register(request):
