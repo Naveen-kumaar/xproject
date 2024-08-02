@@ -21,7 +21,8 @@ from xapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home, name ='home'),
+    path('register/',views.Register, name ='register'),
     path('create/',views.create, name ='create'),
     path('view/',views.view, name ='view'),
-    path('register/',views.Register, name ='register'),
+    path('update/<int:id>',views.update, name ='update')
 ]

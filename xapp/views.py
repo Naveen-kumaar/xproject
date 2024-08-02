@@ -44,9 +44,11 @@ def Register(request):
         en.save()
 
         # myuser= User.objects.create_user(name,email,mobile,role,Password,C_Password)
-        # myuser.save()
-
-
-
-        
+        # myuser.save() 
     return render(request,"register.html")
+
+def update(request,id):
+    mydata = patientdetails.objects.get(id=id)
+
+
+    return render(request,'update.html',{'data':mydata})

@@ -1,10 +1,11 @@
 {% extends 'base.html'%}
 {% load static %}
 {% block content%}
-<h3 class="page-header text-primary text-center"></h3>
+<h2 class="page-header text-primary text-center p-2">View Patient Details</h2>
 <table class="table table-bordered">
     <thead>
         <tr>
+            <th>Id</th>
             <th>Date</th>
             <th>Name</th>
             <th>Age</th>
@@ -14,6 +15,8 @@
             <th>History</th>
             <th>Pain</th>
             <th>Duration</th>
+            <th>Update</th>
+            <th>Delete</th>
         </tr>
     </thead>
     
@@ -21,7 +24,7 @@
         <tbody>
             <tr>
                 <td>{{forloop.counter}}</td>
-                <td>{{data.Id}}</td>
+                <!-- <td>{{data.Id}}</td> -->
                 <td>{{data.Date}}</td>
                 <td>{{data.Name}}</td>
                 <td>{{data.Age}}</td>
@@ -31,6 +34,7 @@
                 <td>{{data.History}}</td>
                 <td>{{data.Pain}}</td>
                 <td>{{data.Duration}}</td>
+                <td><a class="btn btn-success" href="update">Update</a></td>
             </tr>
         </tbody>
     {% endfor %}

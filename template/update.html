@@ -1,0 +1,61 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+<h2 class="text-center text-success">Update Patient Details</h2>
+<div class="card col p-3">
+    <form method = "POST"action="">
+        {% csrf_token %}
+        <h2 class="text-primary">Add patient details</h2>
+        <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" class="form-control" value="{{data.Date}}" name="date" id="date" required>
+        </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" value="{{data.Name}}" name="name" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="text" class="form-control" value="{{data.Age}}" name="age" id="age" required>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="male">Male</label>
+                <input type="radio" name="gender"id="male" value="male">
+                <label for="female">Female</label>
+                <input type="radio"  name="gender"   id="female" value="female">
+            </div>
+            <br>
+           
+            <div class="form-group">
+                <lable for="address">Address</lable>
+                <textarea name="address" class="form-control"  name="address"id="address"  value="{{data.Address}}" ></textarea>
+            </div>
+            <div class="form-group" >
+                <label for="contactno">Contact no</label>
+                <input type="tel" class="form-control" name="contactno" id="contactno" maxlength="10" value="{{data.Contactno}}">
+            </div>
+        
+            <div class="form-group">
+                <label for="history">History</label>
+                <input type="text" class="form-control" name="history" value="{{data.History}}" id="history" required>
+            </div>
+            <div class="form-group">
+                <label for="pain">Pain</label>
+                <input type="text" class="form-control" value="{{data.Pain}}" name="pain" id="pain" required>
+            </div>
+           
+           
+            <div class="form-group">
+                <label for="duration">Duration</label>
+                <input type="time" class="form-control" value="{{data.Duration}}" name="duration" id="duration" required>
+            </div>
+            
+        <button class="btn btn-successs mt-2 mb-2" >Update</button>
+        
+    </form>
+
+
+</div>
+
+{%endblock%}
