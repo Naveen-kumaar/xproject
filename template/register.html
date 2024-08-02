@@ -46,6 +46,17 @@
                     </div>
                     <button class="btn btn-primary mt-2 mb-2" >Submit</button>
                     <button type="clear" class="btn btn-primary mt-2 mb-2" >Clear</button>
+                    <br>
+                    <a href="login">Already have an account..?</a>
+                    {% if messages %}
+                       {%for message in messages%}
+                           <div class="alert alert-{{ message.tags}}">
+                               {{message}}
+                           </div>
+                       {% endfor %}
+                    {% endif %}
+                            
+                     
                 </form>
     
 

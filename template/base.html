@@ -17,10 +17,15 @@
                 <nav class="d-flex justify-content-end mx-5">
                     <ul class="list-inline-item">
                         <li class="list-inline-item"><a class="text-white text-decoration-none" href="{% url 'home' %}">Home</a></li>
-                        <li class="list-inline-item"><a class="text-white text-decoration-none" href="{% url 'create' %}">Add</a></li>
-                        <li class="list-inline-item"><a class="text-white text-decoration-none" href="{% url 'view'%}">View</a></li>
-                        <li class="list-inline-item"><a class="text-white text-decoration-none" href="#">Contact</a></li>
-                        <li class="list-inline-item"><a class="text-white text-decoration-none" href="{% url 'register' %}">Sign up</a></li>
+                        {% if user.is_authenticated %}
+                          <li class="list-inline-item"><a class="text-white text-decoration-none" href="{% url 'register' %}">Sign up</a></li>
+                          <li class="list-inline-item"><a class="text-white text-decoration-none" href="#">Contact</a></li>
+                        {% else %}
+                          <li class="list-inline-item"><a class="text-white text-decoration-none" href="{% url 'create' %}">Add</a></li>
+                          <li class="list-inline-item"><a class="text-white text-decoration-none" href="{% url 'view'%}">View</a></li>
+                        {% endif %}
+                        
+                        
                     </ul>
                 </nav>
             </div>
