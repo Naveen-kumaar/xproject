@@ -7,65 +7,68 @@ Virma-Physio | Register
 
 {% block content %}
 
-    <div class="container">
-       
-        <h2></h2>
-        <div class="row">
-            <div class="col">
-                <img class="img-fluid" src="{% static 'reg.jpg' %}">
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h4 class="mb-3"> Register </h4>
+            <hr style="border-color:#b8bfc2;">
+        </div>
+    </div>
+    <section class="py-4 my-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <img class="img-fluid" src="{% static 'reg.jpg' %}">
                 <div class="col">
                     <p>
                         Physical therapy addresses the illnesses or injuries that limit a person's abilities to move and perform functional activities in their daily lives. PTs use an individual's history and physical examination to arrive at a diagnosis and establish a management plan and, when necessary, incorporate the results of laboratory and imaging studies like X-rays, CT-scan, or MRI findings. Physical therapists can use sonography to diagnose and manage common musculoskeletal, nerve, and pulmonary conditions. Electrodiagnostic testing electromyograms and nerve conduction velocity testing) may also be used.
-                    </p></div>
-            </div>
-            
-            <div class="card col p-2">
-               
-                <form method="POST">
-                    {% csrf_token %}
-                    <h2 class="text-primary">Register</h2>
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" class="form-control" placeholder="Enter your Name" name="name" id="name">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" placeholder="Enter your Email" name="email" id="email">
-                    </div>
-                    <div class="form-group">
-                        <label for="mobile">Mobile</label>
-                        <input type="number" class="form-control" placeholder="Enter your Mobile no " name="mobile" id="mobile">
-                    </div>
-                    <div class="form-group">
-                        <label for="role">Role</label>
-                        <input type="text" class="form-control" placeholder="Enter your Role" name="role" id="role">
-                    </div>
-                    <div class="form-group">
-                        <label for="Password">Password</label>
-                        <input type="password" class="form-control" placeholder="Enter your Password" name="Password" id="Password">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="C_Password">Conform Password</label>
-                        <input type="password" class="form-control" placeholder="Enter your Conform Password" name="C_Password" id="C_Password">
-                    </div>
-                    <button class="btn btn-primary mt-2 mb-2" >Submit</button>
-                    <button type="clear" class="btn btn-primary mt-2 mb-2" >Clear</button>
-                    <br>
-                    <a href="login">Already have an account..?</a>
-                    {% if messages %}
-                       {%for message in messages%}
-                           <div class="alert alert-{{ message.tags}}">
-                               {{message}}
-                           </div>
-                       {% endfor %}
-                    {% endif %}
-                            
-                     
-                </form>
-    
-
+                    </p>
+                </div>
+                </div>
+                <div class="col-6">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <h2 class="text-primary">Register</h2>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" placeholder="Enter your Name" name="name" id="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" placeholder="Enter your Email" name="email" id="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="mobile">Mobile</label>
+                            <input type="number" class="form-control" placeholder="Enter your Mobile no " name="mobile" id="mobile">
+                        </div>
+                        <div class="form-group">
+                            <label for="role">Role</label>
+                            <input type="text" class="form-control" placeholder="Enter your Role" name="role" id="role">
+                        </div>
+                        <div class="form-group">
+                            <label for="Password">Password</label>
+                            <input type="password" class="form-control" placeholder="Enter your Password" name="Password" id="Password">
+                        </div>
+                        <div class="form-group">
+                            <label for="C_Password">Conform Password</label>
+                            <input type="password" class="form-control" placeholder="Enter your Conform Password" name="C_Password" id="C_Password">
+                        </div>
+                        <button class="btn btn-primary mt-2 mb-2" >Submit</button>
+                        <button type="clear" class="btn btn-primary mt-2 mb-2" >Clear</button>
+                        <br>
+                        <a href="login">Already have an account..?</a>
+                        {% if messages %}
+                           {%for message in messages%}
+                               <div class="alert alert-{{ message.tags}}">
+                                   {{message}}
+                               </div>
+                           {% endfor %}
+                        {% endif %}
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-    {% endblock %}
+    </section>
+</div>
+{% endblock %}
