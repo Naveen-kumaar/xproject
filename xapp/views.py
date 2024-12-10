@@ -6,7 +6,6 @@ from django.contrib import messages
 def home(request):
     return render(request,"home.html")
 def create(request):
-    
     if request.method == 'POST':
         date =request.POST.get('date')
         name =request.POST.get('name')
