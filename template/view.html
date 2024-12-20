@@ -30,7 +30,7 @@ Virma-Physio | View Patient Details
                     <th>Delete</th>
                 </tr>
                 {% for data in data %}
-                    <tr>
+            <tr>
 
                 <td>{{forloop.counter}}</td>
                 <!-- <td>{{data.Id}}</td> -->
@@ -43,9 +43,9 @@ Virma-Physio | View Patient Details
                 <td>{{data.History}}</td>
                 <td>{{data.Pain}}</td>
                 <td>{{data.Duration}}</td>
-                <td><a class="btn btn-success" href="update">Update</a></td>
-                        <td><a href="#" onclick="return confirm('Are you sure? to Remove')" class="btn btn-danger btn-sm"><i class="fa fa-trash">Remove</a></td>
-                    </tr>
+                <td><a class="btn btn-success" href="{% url 'update' data.id %}">Update</a></td>
+                <td><a href="{% url 'Delete' data.id %}" onclick="return confirm('Are you sure? to Remove')" class="btn btn-danger btn-sm"><i class="fa fa-trash">Remove</a></td>
+            </tr>
                 {% endfor %}
             </table>
         </div>

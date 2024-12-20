@@ -26,7 +26,6 @@ def create(request):
 
 def view(request):
     mydata=patientdetails.objects.all()
-
     return render(request,'view.html',{'data':mydata})
 
 
@@ -54,11 +53,19 @@ def Register(request):
 
 def update(request,id):
     mydata = patientdetails.objects.get(id=id)
-
-
     return render(request,'update.html',{'data':mydata})
 
+def Delete(request,id):
+    mydata = patientdetails.objects.get(id=id)
+    mydata.delete()
+    return redirect('/view')
 
 def login(request):
+
+     return render(request,'login.html')
+
+
+
+def contact(request):
     
-    return render(request,'login.html')
+    return render(request,'contact.html')
