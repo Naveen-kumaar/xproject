@@ -53,6 +53,29 @@ def Register(request):
 
 def update(request,id):
     mydata = patientdetails.objects.get(id=id)
+    if request.method =='POST':
+        date =request.POST.get('date')
+        name =request.POST.get('name')
+        age =request.POST.get('age')
+        gender =request.POST.get('gender')
+        address =request.POST.get('address')
+        contactno =request.POST.get('contactno')
+        history =request.POST.get('history')
+        pain=request.POST.get('pain')
+        duration=request.POST.get('duration')
+
+        mydata.Date=date
+        mydata.Name=name
+        mydata.Age=age
+        mydata.Gender=gender
+        mydata.Address=address
+        mydata.Contactno=contactno
+        mydata.History=history
+        mydata.Pain=pain
+        mydata.Duration=duration
+
+        mydata.save()
+        return redirect('/view')
     return render(request,'update.html',{'data':mydata})
 
 def Delete(request,id):

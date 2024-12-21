@@ -44,7 +44,7 @@ Virma-Physio | View Patient Details
                 <td>{{data.Pain}}</td>
                 <td>{{data.Duration}}</td>
                 <td><a class="btn btn-success" href="{% url 'update' data.id %}">Update</a></td>
-                <td><a href="{% url 'Delete' data.id %}" onclick="return confirm('Are you sure? to Remove')" class="btn btn-danger btn-sm"><i class="fa fa-trash">Remove</a></td>
+                <td><a href="{% url 'Delete' data.id %}" onclick="return confirm('Are you sure? to Remove')" class="btn btn-danger "><i class="fa fa-trash ">Delete</a></td>
             </tr>
                 {% endfor %}
             </table>

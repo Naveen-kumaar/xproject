@@ -7,23 +7,16 @@ Virma-Physio | Add Patient Details
 
 {% block content%}
 
-    <div class="container">
-       
-        <h2></h2>
+    <div class="container mt-5">
         <div class="row">
-            <div class="col mt-5">
-                <img class="img-fluid" src="{% static 'create.jpg' %}">
+            <div class="col-6 mt-5">
                 <div class="col">
-                    <p> Physicians like Hippocrates and later Galen are believed to have been the first practitioners of physical therapy, advocating massage, manual therapy techniques and hydrotherapy to treat people in 460 BC.After the development of orthopedics in the eighteenth century, machines like the Gymnasticon were developed to treat gout and similar diseases by systematic exercise of the joints, similar to later developments in physical therapy.
-
-                        The earliest documented origins of actual physical therapy as a professional group date back to Per Henrik Ling, "Father of Swedish Gymnastics," who founded the Royal Central Institute of Gymnastics (RCIG) in 1813 for manipulation, and exercise. Up until 2014, the Swedish word for a physical therapist was sjukgymnast = someone involved in gymnastics for those who are ill, but the title was then changed to fysioterapeut (physiotherapist), the word used in the other Scandinavian countries</p>
-                        <img class="img-fluid" src="{% static 'physio.webp' %}">
-                       <p>physiotherapy, is a healthcare profession, as well as the care provided by physical therapists who promote, maintain, or restore health through patient education, physical intervention, disease prevention, and health promotion. Physical therapist is the term used for such professionals in the United States, and physiotherapist is the term used in many other countries.</p>
-
+                    <img class="img-fluid" src="{% static 'physio.webp' %}">
+                    <p>physiotherapy, is a healthcare profession, as well as the care provided by physical therapists who promote, maintain, or restore health through patient education, physical intervention, disease prevention, and health promotion. Physical therapist is the term used for such professionals in the United States, and physiotherapist is the term used in many other countries.</p>
                 </div>
             </div>
             
-            <div class="col p-3 my-5">
+            <div class="col-6 p-3 my-5">
                 <form method = "POST"action="">
                     {% csrf_token %}
                     <h2 class="text-primary">Add patient details</h2>
